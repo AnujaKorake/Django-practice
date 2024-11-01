@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block start %}
+<br>
+<br>
+<div class="container m-5">
+<div class="d-flex justify-content-center">
+<form class = "col-6 mx auto card p-3 shadow-lg " method="POST" enctype="multipart/form-data">
+
+  <div>
+    {% csrf_token %}
+    {% include "alert.html" %}
+    <h2>Login</h2>
+    <hr>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Username</label>
+        <input type="text" name="username"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <p>Don't have Account<a href="/register/">Register</a></p>
+       
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+</form>
+
+
+</div>
+</div>
+
+{% endblock %}
